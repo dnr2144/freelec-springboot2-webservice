@@ -1,4 +1,0 @@
-com/jojoldubook/practice/springboot/web/HelloController.java
- com.jojoldubook.practice.springboot.web.HelloController
-com/jojoldubook/practice/springboot/Application.java
- com.jojoldubook.practice.springboot.Application
