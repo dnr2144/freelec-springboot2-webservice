@@ -1,6 +1,6 @@
 package com.jojoldubook.practice.springboot.web.dto;
 
-import com.jojoldubook.practice.springboot.web.HelloResponseDto;
+import com.jojoldubook.practice.springboot.web.dto.HelloResponseDto;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

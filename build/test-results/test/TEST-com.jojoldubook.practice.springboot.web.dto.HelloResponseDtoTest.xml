@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jojoldubook.practice.springboot.web.dto.HelloResponseDtoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-26T04:20:12" hostname="SEONGUKKANG" time="0.054">
-  <properties/>
-  <testcase name="롬복_기능_테스트()" classname="com.jojoldubook.practice.springboot.web.dto.HelloResponseDtoTest" time="0.054"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

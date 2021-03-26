@@ -1,4 +1,4 @@
-com/jojoldubook/practice/springboot/web/HelloControllerTest.java
- com.jojoldubook.practice.springboot.web.HelloControllerTest
 com/jojoldubook/practice/springboot/web/dto/HelloResponseDtoTest.java
  com.jojoldubook.practice.springboot.web.dto.HelloResponseDtoTest
+com/jojoldubook/practice/springboot/web/HelloControllerTest.java
+ com.jojoldubook.practice.springboot.web.HelloControllerTest
