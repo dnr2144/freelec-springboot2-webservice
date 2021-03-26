@@ -2,7 +2,7 @@ com/jojoldubook/practice/springboot/web/dto/HelloResponseDtoTest.java
  com.jojoldubook.practice.springboot.web.dto.HelloResponseDtoTest
 com/jojoldubook/practice/springboot/web/HelloControllerTest.java
  com.jojoldubook.practice.springboot.web.HelloControllerTest
-com/jojoldubook/practice/springboot/web/domain/posts/PostsRepositoryTest.java
- com.jojoldubook.practice.springboot.web.domain.posts.PostsRepositoryTest
 com/jojoldubook/practice/springboot/web/PostsApiControllerTest.java
  com.jojoldubook.practice.springboot.web.PostsApiControllerTest
+com/jojoldubook/practice/springboot/web/domain/posts/PostsRepositoryTest.java
+ com.jojoldubook.practice.springboot.web.domain.posts.PostsRepositoryTest
