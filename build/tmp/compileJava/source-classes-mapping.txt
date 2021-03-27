@@ -1,8 +1,9 @@
 com/jojoldubook/practice/springboot/web/dto/PostsUpdateRequestDto.java
  com.jojoldubook.practice.springboot.web.dto.PostsUpdateRequestDto
  com.jojoldubook.practice.springboot.web.dto.PostsUpdateRequestDto$PostsUpdateRequestDtoBuilder
-com/jojoldubook/practice/springboot/domain/posts/PostsRepository.java
- com.jojoldubook.practice.springboot.domain.posts.PostsRepository
+com/jojoldubook/practice/springboot/web/dto/PostsSaveRequestDto.java
+ com.jojoldubook.practice.springboot.web.dto.PostsSaveRequestDto
+ com.jojoldubook.practice.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
 com/jojoldubook/practice/springboot/web/dto/HelloResponseDto.java
  com.jojoldubook.practice.springboot.web.dto.HelloResponseDto
 com/jojoldubook/practice/springboot/web/HelloController.java
@@ -11,15 +12,16 @@ com/jojoldubook/practice/springboot/domain/BaseTimeEntity.java
  com.jojoldubook.practice.springboot.domain.BaseTimeEntity
 com/jojoldubook/practice/springboot/web/dto/PostsResponseDto.java
  com.jojoldubook.practice.springboot.web.dto.PostsResponseDto
-com/jojoldubook/practice/springboot/service/posts/PostsService.java
- com.jojoldubook.practice.springboot.service.posts.PostsService
-com/jojoldubook/practice/springboot/Application.java
- com.jojoldubook.practice.springboot.Application
 com/jojoldubook/practice/springboot/domain/posts/Posts.java
  com.jojoldubook.practice.springboot.domain.posts.Posts
  com.jojoldubook.practice.springboot.domain.posts.Posts$PostsBuilder
-com/jojoldubook/practice/springboot/web/dto/PostsSaveRequestDto.java
- com.jojoldubook.practice.springboot.web.dto.PostsSaveRequestDto
- com.jojoldubook.practice.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
+com/jojoldubook/practice/springboot/Application.java
+ com.jojoldubook.practice.springboot.Application
+com/jojoldubook/practice/springboot/service/posts/PostsService.java
+ com.jojoldubook.practice.springboot.service.posts.PostsService
+com/jojoldubook/practice/springboot/web/IndexController.java
+ com.jojoldubook.practice.springboot.web.IndexController
+com/jojoldubook/practice/springboot/domain/posts/PostsRepository.java
+ com.jojoldubook.practice.springboot.domain.posts.PostsRepository
 com/jojoldubook/practice/springboot/web/PostsApiController.java
  com.jojoldubook.practice.springboot.web.PostsApiController
