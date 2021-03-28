@@ -22,7 +22,7 @@
         {{#posts}} <!-- posts라는 List를 순회(java for문)-->
             <tr>
                 <td>{{id}}</td> <!-- List에서 뽑아낸 객체의 필드 사용-->
-                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                <td><a href="/posts/update/{{id}}">{{title}}</a></td> <!-- 타이틀 클릭 시 수정화면 페이지로 이동-->
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>

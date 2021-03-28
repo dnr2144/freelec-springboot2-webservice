@@ -1,6 +1,6 @@
 package com.jojoldubook.practice.springboot.web;
 
-import com.jojoldubook.practice.springboot.service.posts.PostsService;
+import com.jojoldubook.practice.springboot.service.PostsService;
 import com.jojoldubook.practice.springboot.web.dto.PostsResponseDto;
 import com.jojoldubook.practice.springboot.web.dto.PostsSaveRequestDto;
 import com.jojoldubook.practice.springboot.web.dto.PostsUpdateRequestDto;
@@ -18,13 +18,13 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @PutMapping("/api/v1/posts/{id}") // update book
-    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
-        return postsService.update(id, requestDto);
-    }
-
     @GetMapping("/api/v1/posts/{id}") // search book
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
+    }
+
+    @PutMapping("/api/v1/posts/{id}") // update book
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
+        return postsService.update(id, requestDto);
     }
 }

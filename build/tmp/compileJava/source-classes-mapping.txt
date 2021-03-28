@@ -17,13 +17,13 @@ com/jojoldubook/practice/springboot/domain/posts/Posts.java
  com.jojoldubook.practice.springboot.domain.posts.Posts$PostsBuilder
 com/jojoldubook/practice/springboot/Application.java
  com.jojoldubook.practice.springboot.Application
-com/jojoldubook/practice/springboot/service/posts/PostsService.java
- com.jojoldubook.practice.springboot.service.posts.PostsService
-com/jojoldubook/practice/springboot/web/PostsApiController.java
- com.jojoldubook.practice.springboot.web.PostsApiController
-com/jojoldubook/practice/springboot/domain/posts/PostsRepository.java
- com.jojoldubook.practice.springboot.domain.posts.PostsRepository
 com/jojoldubook/practice/springboot/web/dto/PostsListResponseDto.java
  com.jojoldubook.practice.springboot.web.dto.PostsListResponseDto
+com/jojoldubook/practice/springboot/domain/posts/PostsRepository.java
+ com.jojoldubook.practice.springboot.domain.posts.PostsRepository
+com/jojoldubook/practice/springboot/service/PostsService.java
+ com.jojoldubook.practice.springboot.service.PostsService
 com/jojoldubook/practice/springboot/web/IndexController.java
  com.jojoldubook.practice.springboot.web.IndexController
+com/jojoldubook/practice/springboot/web/PostsApiController.java
+ com.jojoldubook.practice.springboot.web.PostsApiController
