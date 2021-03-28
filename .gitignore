@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/windows,gradle,java,intellij
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,gradle,java,intellij
+# Created by https://www.toptal.com/developers/gitignore/api/java,windows,intellij
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,windows,intellij
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -82,13 +81,13 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
-
+.idea
 # Sonarlint plugin
 # https://plugins.jetbrains.com/plugin/7973-sonarlint
 .idea/**/sonarlint/
 
 # SonarQube Plugin
-# https://plugins.jetbrains.com/plugin/7238-sonarqube-community-plugin
+ https://plugins.jetbrains.com/plugin/7238-sonarqube-community-plugin
 .idea/**/sonarIssues.xml
 
 # Markdown Navigator plugin
@@ -156,23 +155,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-### Gradle ###
-.gradle
-build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
-
-### Gradle Patch ###
-**/build/
-
-# End of https://www.toptal.com/developers/gitignore/api/windows,gradle,java,intellij
+# End of https://www.toptal.com/developers/gitignore/api/java,windows,intellij
