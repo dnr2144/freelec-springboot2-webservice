@@ -61,15 +61,4 @@ public class PostsService {
         * System.out.println(list.stream().map(String::toUpperCase).collect(Collectors.toList())); //[APPLE, BANANA, MELON, GRAPE, STRAWBERRY]
         */
     }
-
-    @Transactional
-    public void delete(Long id) {
-        Posts posts = postsRepository.findById(id).orElseThrow( () ->
-                new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
-        postsRepository.delete(posts); // 존재하는 Posts인지 확인을 위해 엔티티 조회 후 그대로 삭제
-        /*
-        * JpaRepository에서 이미 delete 메서드를 지원하고 있음
-        * 엔티티를 파라미터로 삭제할 수도 있고, deleteById 메서드를 이용하면 id로 삭제할 수도 있음
-        */
-    }
 }
