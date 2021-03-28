@@ -31,7 +31,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/'; // 글이 정상적으로 등록되면 index 페이지로 리다이렉트
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
