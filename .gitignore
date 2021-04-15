@@ -162,3 +162,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,windows,intellij
 >>>>>>> c6362480047b6c64ab1037b2b199ecbd17b19df7
+
+application-oauth.properties
