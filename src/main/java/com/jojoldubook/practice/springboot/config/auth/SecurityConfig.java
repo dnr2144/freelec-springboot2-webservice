@@ -5,12 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.oauth2.client.userinfo.CustomUserTypesOAuth2UserService;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 
 @RequiredArgsConstructor
 @EnableWebSecurity // Spring Security 설정들을 활성화
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private final CustomOAuth2UserService customOAuth2UserService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -30,9 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .oauth2Login()
                 .userInfoEndpoint()
-                .userService(customOAuth2UserServ);
-
-
+                .userService(customOAuth2UserService);
     }
 }
 
