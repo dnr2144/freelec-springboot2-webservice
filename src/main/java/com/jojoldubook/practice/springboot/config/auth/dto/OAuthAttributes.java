@@ -5,6 +5,7 @@ import com.jojoldubook.practice.springboot.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.Iterator;
 import java.util.Map;
 
 // This class see as DTO class
@@ -63,15 +64,14 @@ public class OAuthAttributes {
                 .build();
     }
 
+    // json data 형식은 https://sundries-in-myidea.tistory.com/89 참조
     public static OAuthAttributes ofKakao(String userNameAttributeName, Map<String, Object> attributes) {
-        Map<String, Object> response = (Map<String, Object>) attributes.get("kakao_account");
-        Map<String, Object> profile = (Map<String, Object>) response.get("profile");
-
-        System.out.println("kakao: " + attributes.get("kakao.account"));
+        Map<String, Object> kakao_account = (Map<String, Object>) attributes.get("kakao_account");
+        Map<String, Object> profile = (Map<String, Object>) kakao_account.get("profile");
 
         return OAuthAttributes.builder()
                 .name((String) profile.get("nickname"))
-                .email((String) response.get("email"))
+                .email((String) kakao_account.get("email"))
                 .picture((String) profile.get("profile_image_url"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
@@ -94,4 +94,6 @@ public class OAuthAttributes {
                 .role(Role.GUEST)
                 .build();
     }
+
+
 }
