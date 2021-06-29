@@ -2,6 +2,6 @@
 .idea
 
 application-real-oauth.properties
-
+application-oauth.yml
 build
 out
