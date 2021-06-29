@@ -1,5 +1,5 @@
 ## freelec-springboot2-webservice(👯springboot와 aws로 구현하는 웹서비스 with jojoldu)
-## 본 내용은 이동욱님이 집필하신 **스프링 부트와 AWS로 구현하는 웹 서비스의 내용을 요약한 것입니다.**
+## ⚡본 내용은 이동욱님이 집필하신 **스프링 부트와 AWS로 구현하는 웹 서비스의 내용을 요약한 것입니다.**
 <!--
 **dnr2144/dnr2144** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
