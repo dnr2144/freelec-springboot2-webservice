@@ -8,7 +8,6 @@
 //import org.springframework.boot.test.web.client.TestRestTemplate;
 //import org.springframework.test.context.junit.jupiter.SpringExtension;
 //import org.springframework.test.context.junit4.SpringRunner;
->>>>>>> ffcd4623d9ea90fc6c5a1da5572c03f4cb30e4b7
 //
 //import static org.assertj.core.api.Assertions.assertThat;
 //import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
