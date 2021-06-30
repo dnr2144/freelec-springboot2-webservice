@@ -1,0 +1,211 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65536 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2799), pid=14873, tid=0x00007fc83f9d9700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_282-b08) (build 1.8.0_282-b08)
+# Java VM: OpenJDK 64-Bit Server VM (25.282-b08 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fc850116000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=14881, stack(0x00007fc83f8da000,0x00007fc83f9da000)]
+
+Stack: [0x00007fc83f8da000,0x00007fc83f9da000],  sp=0x00007fc83f9d6d30,  free space=1011k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xbaec4d]  VMError::report_and_die()+0x2cd
+V  [libjvm.so+0x4f38b4]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0xb4
+V  [libjvm.so+0x971c19]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0xf9
+V  [libjvm.so+0x9697ee]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2e
+V  [libjvm.so+0xbab61c]  VirtualSpace::expand_by(unsigned long, bool)+0x13c
+V  [libjvm.so+0x621007]  CodeHeap::expand_by(unsigned long)+0x67
+V  [libjvm.so+0x470dcd]  CodeCache::allocate(int, bool)+0x3d
+V  [libjvm.so+0x930da9]  nmethod::new_nmethod(methodHandle, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, int)+0x219
+V  [libjvm.so+0x40863e]  ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, int, bool, bool, RTMState)+0x1fe
+V  [libjvm.so+0x494814]  Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)+0xe44
+V  [libjvm.so+0x3e1e02]  C2Compiler::compile_method(ciEnv*, ciMethod*, int)+0xb2
+V  [libjvm.so+0x49f856]  CompileBroker::invoke_compiler_on_method(CompileTask*)+0x7c6
+V  [libjvm.so+0x4a1fe6]  CompileBroker::compiler_thread_loop()+0x696
+V  [libjvm.so+0xb4fe55]  JavaThread::thread_main_inner()+0x205
+V  [libjvm.so+0xb5119a]  JavaThread::run()+0x2ea
+V  [libjvm.so+0x96f059]  java_start(Thread*)+0xf9
+C  [libpthread.so.0+0x740b]  start_thread+0xdb
+
+
+Current CompileTask:
+C2:  49037 3925   !   4       java.net.URLClassLoader$1::run (63 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fc8383ad800 JavaThread "Build operations" [_thread_blocked, id=14908, stack(0x00007fc81b7e8000,0x00007fc81b8e9000)]
+  0x00007fc838a96000 JavaThread "Cache worker for Build Output Cleanup Cache (/home/ec2-user/app/step1/freelec-springboot2-webservice/.gradle/buildOutputCleanup)" [_thread_blocked, id=14907, stack(0x00007fc81b8e9000,0x00007fc81b9ea000)]
+  0x00007fc838c10000 JavaThread "Cache worker for file content cache (/home/ec2-user/.gradle/caches/6.7.1/fileContent)" [_thread_blocked, id=14906, stack(0x00007fc828c2e000,0x00007fc828d2f000)]
+  0x00007fc838b6f000 JavaThread "jar transforms" [_thread_blocked, id=14905, stack(0x00007fc828f2f000,0x00007fc829030000)]
+  0x00007fc8388a9800 JavaThread "Cache worker for execution history cache (/home/ec2-user/.gradle/caches/6.7.1/executionHistory)" [_thread_blocked, id=14904, stack(0x00007fc83c403000,0x00007fc83c504000)]
+  0x00007fc838871000 JavaThread "Cache worker for cache directory md-rule (/home/ec2-user/.gradle/caches/6.7.1/md-rule)" [_thread_blocked, id=14903, stack(0x00007fc83c504000,0x00007fc83c605000)]
+  0x00007fc83881b800 JavaThread "Cache worker for cache directory md-supplier (/home/ec2-user/.gradle/caches/6.7.1/md-supplier)" [_thread_blocked, id=14902, stack(0x00007fc83c605000,0x00007fc83c706000)]
+  0x00007fc8387c7000 JavaThread "Cache worker for checksums cache (/home/ec2-user/app/step1/freelec-springboot2-webservice/.gradle/checksums)" [_thread_blocked, id=14901, stack(0x00007fc83c706000,0x00007fc83c807000)]
+  0x00007fc8386e1000 JavaThread "Cache worker for file hash cache (/home/ec2-user/app/step1/freelec-springboot2-webservice/.gradle/6.7.1/fileHashes)" [_thread_blocked, id=14900, stack(0x00007fc83c807000,0x00007fc83c908000)]
+  0x00007fc83827a800 JavaThread "Cache worker for journal cache (/home/ec2-user/.gradle/caches/journal-1)" [_thread_blocked, id=14899, stack(0x00007fc83cfa0000,0x00007fc83d0a1000)]
+  0x00007fc8381ea800 JavaThread "File lock request listener" [_thread_in_native, id=14898, stack(0x00007fc83d0a1000,0x00007fc83d1a2000)]
+  0x00007fc8381e3800 JavaThread "Cache worker for file hash cache (/home/ec2-user/.gradle/caches/6.7.1/fileHashes)" [_thread_blocked, id=14897, stack(0x00007fc83d1a2000,0x00007fc83d2a3000)]
+  0x00007fc83801b800 JavaThread "Thread-9" [_thread_in_native, id=14896, stack(0x00007fc83d4a3000,0x00007fc83d5a4000)]
+  0x00007fc838012800 JavaThread "Stdin handler" [_thread_blocked, id=14895, stack(0x00007fc83d5a4000,0x00007fc83d6a5000)]
+  0x00007fc83800e800 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /127.0.0.1:39367 to /127.0.0.1:57176" [_thread_in_vm, id=14894, stack(0x00007fc83d6a5000,0x00007fc83d7a6000)]
+  0x00007fc824009000 JavaThread "Daemon worker" [_thread_blocked, id=14891, stack(0x00007fc83d7a6000,0x00007fc83d8a7000)]
+  0x00007fc824007800 JavaThread "Cancel handler" [_thread_blocked, id=14890, stack(0x00007fc83d8a7000,0x00007fc83d9a8000)]
+  0x00007fc824004000 JavaThread "Handler for socket connection from /127.0.0.1:39367 to /127.0.0.1:57176" [_thread_in_native, id=14889, stack(0x00007fc83d9a8000,0x00007fc83daa9000)]
+  0x00007fc820456000 JavaThread "Daemon" [_thread_blocked, id=14888, stack(0x00007fc83daa9000,0x00007fc83dbaa000)]
+  0x00007fc8513a7000 JavaThread "Daemon periodic checks" [_thread_blocked, id=14887, stack(0x00007fc83dbaa000,0x00007fc83dcab000)]
+  0x00007fc85137c800 JavaThread "Incoming local TCP Connector on port 39367" [_thread_in_native, id=14886, stack(0x00007fc83deb2000,0x00007fc83dfb3000)]
+  0x00007fc851311800 JavaThread "Daemon health stats" [_thread_blocked, id=14885, stack(0x00007fc83dfc4000,0x00007fc83e0c5000)]
+  0x00007fc85011a800 JavaThread "Service Thread" daemon [_thread_blocked, id=14883, stack(0x00007fc83f6d7000,0x00007fc83f7d8000)]
+  0x00007fc850117800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=14882, stack(0x00007fc83f7d9000,0x00007fc83f8d9000)]
+=>0x00007fc850116000 JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=14881, stack(0x00007fc83f8da000,0x00007fc83f9da000)]
+  0x00007fc850107800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14880, stack(0x00007fc83f9da000,0x00007fc83fadb000)]
+  0x00007fc8500db800 JavaThread "Finalizer" daemon [_thread_blocked, id=14879, stack(0x00007fc83fadb000,0x00007fc83fbdc000)]
+  0x00007fc8500d7000 JavaThread "Reference Handler" daemon [_thread_blocked, id=14878, stack(0x00007fc83fbdc000,0x00007fc83fcdd000)]
+  0x00007fc85004c800 JavaThread "main" [_thread_blocked, id=14876, stack(0x00007fc8570f4000,0x00007fc8571f4000)]
+
+Other Threads:
+  0x00007fc8500cd000 VMThread [stack: 0x00007fc83fcde000,0x00007fc83fdde000] [id=14877]
+  0x00007fc85011d800 WatcherThread [stack: 0x00007fc83f5d7000,0x00007fc83f6d7000] [id=14884]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fc850049000] CodeCache_lock - owner thread: 0x00007fc850116000
+[0x00007fc85004a680] Compile_lock - owner thread: 0x00007fc850116000
+[0x00007fc85004a780] MethodCompileQueue_lock - owner thread: 0x00007fc850116000
+
+heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ def new generation   total 78848K, used 23039K [0x00000000e0000000, 0x00000000e5580000, 0x00000000eaaa0000)
+  eden space 70144K,  23% used [0x00000000e0000000, 0x00000000e0fd6b38, 0x00000000e4480000)
+  from space 8704K,  78% used [0x00000000e4480000, 0x00000000e4b29370, 0x00000000e4d00000)
+  to   space 8704K,   0% used [0x00000000e4d00000, 0x00000000e4d00000, 0x00000000e5580000)
+ tenured generation   total 174784K, used 21443K [0x00000000eaaa0000, 0x00000000f5550000, 0x0000000100000000)
+   the space 174784K,  12% used [0x00000000eaaa0000, 0x00000000ebf90c10, 0x00000000ebf90e00, 0x00000000f5550000)
+ Metaspace       used 48510K, capacity 49994K, committed 50352K, reserved 1093632K
+  class space    used 6390K, capacity 6707K, committed 6832K, reserved 1048576K
+
+Card table byte_map: [0x00007fc854101000,0x00007fc854202000] byte_map_base: 0x00007fc853a01000
+
+Polling page: 0x00007fc8571ff000
+
+CodeCache: size=245760Kb used=12619Kb max_used=12845Kb free=233140Kb
+ bounds [0x00007fc840be5000, 0x00007fc841885000, 0x00007fc84fbe5000]
+ total_blobs=4373 nmethods=3575 adapters=708
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 20.171 Thread 0x00007fc850117800 nmethod 3821 0x00007fc8418100d0 code [0x00007fc841810220, 0x00007fc841810330]
+Event: 20.171 Thread 0x00007fc850117800 3818       3       com.sun.org.apache.xerces.internal.util.XMLStringBuffer::<init> (7 bytes)
+Event: 20.172 Thread 0x00007fc850117800 nmethod 3818 0x00007fc84180fb10 code [0x00007fc84180fc80, 0x00007fc84180ff90]
+Event: 20.172 Thread 0x00007fc850117800 3817   !   3       com.esotericsoftware.kryo.io.Output::flush (57 bytes)
+Event: 20.172 Thread 0x00007fc850117800 nmethod 3817 0x00007fc84180f490 code [0x00007fc84180f620, 0x00007fc84180f998]
+Event: 20.172 Thread 0x00007fc850116000 3823       4       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::ensureCapacity (358 bytes)
+Event: 20.174 Thread 0x00007fc850117800 3825 %     3       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read @ 113 (1443 bytes)
+Event: 20.179 Thread 0x00007fc850116000 nmethod 3823 0x00007fc841813050 code [0x00007fc841813240, 0x00007fc8418139d0]
+Event: 20.179 Thread 0x00007fc850116000 3827       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipString (122 bytes)
+Event: 20.181 Thread 0x00007fc850117800 nmethod 3825% 0x00007fc841815cd0 code [0x00007fc841816120, 0x00007fc841818e18]
+Event: 20.182 Thread 0x00007fc850117800 3828       3       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read (1443 bytes)
+Event: 20.188 Thread 0x00007fc850117800 nmethod 3828 0x00007fc84181b650 code [0x00007fc84181baa0, 0x00007fc84181e5d8]
+Event: 20.188 Thread 0x00007fc850117800 3829       3       com.sun.org.apache.xerces.internal.dom.DeferredElementImpl::synchronizeData (96 bytes)
+Event: 20.193 Thread 0x00007fc850117800 nmethod 3829 0x00007fc8418145d0 code [0x00007fc841814820, 0x00007fc8418156b8]
+Event: 20.193 Thread 0x00007fc850117800 3830       3       com.sun.org.apache.xerces.internal.dom.ElementImpl::setupDefaultAttributes (23 bytes)
+Event: 20.193 Thread 0x00007fc850117800 nmethod 3830 0x00007fc8418126d0 code [0x00007fc841812880, 0x00007fc841812e38]
+Event: 20.193 Thread 0x00007fc850117800 3831       3       com.sun.org.apache.xerces.internal.dom.ElementImpl::getDefaultAttributes (48 bytes)
+Event: 20.194 Thread 0x00007fc850117800 nmethod 3831 0x00007fc841820d50 code [0x00007fc841820fa0, 0x00007fc841822178]
+Event: 20.194 Thread 0x00007fc850117800 3832       3       com.sun.org.apache.xerces.internal.dom.CoreDocumentImpl::getDoctype (16 bytes)
+Event: 20.195 Thread 0x00007fc850117800 nmethod 3832 0x00007fc841814010 code [0x00007fc841814180, 0x00007fc841814528]
+Event: 20.198 Thread 0x00007fc850116000 nmethod 3827 0x00007fc841824350 code [0x00007fc841824520, 0x00007fc841824b68]
+Event: 20.198 Thread 0x00007fc850116000 3826       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipSpaces (350 bytes)
+Event: 20.200 Thread 0x00007fc850117800 3833       3       org.gradle.internal.hash.HashCode::decode (84 bytes)
+Event: 20.201 Thread 0x00007fc850117800 nmethod 3833 0x00007fc841822d10 code [0x00007fc841822f40, 0x00007fc841823c68]
+Event: 20.201 Thread 0x00007fc850117800 3835       3       com.google.common.cache.LocalCache$AccessQueue::offer (9 bytes)
+Event: 20.201 Thread 0x00007fc850117800 nmethod 3835 0x00007fc8418227d0 code [0x00007fc841822940, 0x00007fc841822c48]
+Event: 20.201 Thread 0x00007fc850117800 3836       3       com.google.common.cache.LocalCache$AccessQueue::offer (38 bytes)
+Event: 20.202 Thread 0x00007fc850117800 nmethod 3836 0x00007fc8418111d0 code [0x00007fc8418113e0, 0x00007fc841811d48]
+Event: 20.203 Thread 0x00007fc850117800 3837       3       com.google.common.io.CountingOutputStream::write (19 bytes)
+Event: 20.203 Thread 0x00007fc850117800 nmethod 3837 0x00007fc841810d50 code [0x00007fc841810ec0, 0x00007fc841811108]
+Event: 20.203 Thread 0x00007fc850117800 3838       3       org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.PomReader::maybeSetEffectiveProperty (30 bytes)
+Event: 20.204 Thread 0x00007fc850117800 nmethod 3838 0x00007fc8418252d0 code [0x00007fc841825460, 0x00007fc8418257d8]
+Event: 20.210 Thread 0x00007fc850116000 nmethod 3826 0x00007fc841828910 code [0x00007fc841828ac0, 0x00007fc841828ee8]
+Event: 20.210 Thread 0x00007fc850116000 3839       4       com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator::characters (255 bytes)
+Event: 20.212 Thread 0x00007fc850117800 3840       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getNodeValueString (7 bytes)
+Event: 20.212 Thread 0x00007fc850117800 nmethod 3840 0x00007fc841828550 code [0x00007fc8418286c0, 0x00007fc841828868]
+Event: 20.212 Thread 0x00007fc850117800 3841       3       com.sun.org.apache.xerces.internal.dom.DeferredTextImpl::synchronizeData (47 bytes)
+Event: 20.213 Thread 0x00007fc850117800 nmethod 3841 0x00007fc841827610 code [0x00007fc841827800, 0x00007fc841828268]
+Event: 20.213 Thread 0x00007fc850117800 3842       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getRealPrevSibling (7 bytes)
+Event: 20.213 Thread 0x00007fc850117800 nmethod 3842 0x00007fc841827250 code [0x00007fc8418273c0, 0x00007fc841827568]
+Event: 20.213 Thread 0x00007fc850117800 3843       3       com.sun.org.apache.xerces.internal.dom.ParentNode::getChildNodes (13 bytes)
+Event: 20.213 Thread 0x00007fc850117800 nmethod 3843 0x00007fc841826c90 code [0x00007fc841826e00, 0x00007fc8418271a8]
+Event: 20.213 Thread 0x00007fc850117800 3844       3       java.util.Stack::<init> (5 bytes)
+Event: 20.214 Thread 0x00007fc850117800 nmethod 3844 0x00007fc8418267d0 code [0x00007fc841826940, 0x00007fc841826b88]
+Event: 20.214 Thread 0x00007fc850117800 3845       3       org.gradle.cache.internal.btree.BTreePersistentIndexedCache$IndexEntry::compareTo (9 bytes)
+Event: 20.214 Thread 0x00007fc850117800 nmethod 3845 0x00007fc8418261d0 code [0x00007fc841826340, 0x00007fc8418266b0]
+Event: 20.214 Thread 0x00007fc850117800 3846       3       org.gradle.cache.internal.btree.BTreePersistentIndexedCache$IndexEntry::compareTo (30 bytes)
+Event: 20.214 Thread 0x00007fc850117800 nmethod 3846 0x00007fc841825d90 code [0x00007fc841825f00, 0x00007fc841826110]
+Event: 20.214 Thread 0x00007fc850117800 3847       3       sun.security.provider.MD5::implCompress (1508 bytes)
+Event: 20.217 Thread 0x00007fc850117800 nmethod 3847 0x00007fc841829310 code [0x00007fc8418296a0, 0x00007fc84182bda8]
+Event: 20.218 Thread 0x00007fc850117800 3848       3       java.io.File::getParent (65 bytes)
+Event: 20.218 Thread 0x00007fc850117800 nmethod 3848 0x00007fc84182d410 code [0x00007fc84182d5c0, 0x00007fc84182dbe8]
+Event: 20.219 Thread 0x00007fc850117800 3850       3       java.nio.charset.CharsetDecoder::replaceWith (68 bytes)
+Event: 20.220 Thread 0x00007fc850117800 nmethod 3850 0x00007fc841830c90 code [0x00007fc841830e60, 0x00007fc841831478]
+Event: 20.220 Thread 0x00007fc850117800 3849       3       com.google.common.io.CountingInputStream::read (25 bytes)
+Event: 20.220 Thread 0x00007fc850117800 nmethod 3849 0x00007fc8418258d0 code [0x00007fc841825a40, 0x00007fc841825ca8]
+Event: 20.220 Thread 0x00007fc850116000 nmethod 3839 0x00007fc8418316d0 code [0x00007fc841831840, 0x00007fc841831b08]
+Event: 20.220 Thread 0x00007fc850116000 3824       4       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::createNode (46 bytes)
+Event: 20.220 Thread 0x00007fc850117800 3851       3       java.util.concurrent.locks.ReentrantLock$FairSync::tryAcquire (74 bytes)
+Event: 20.221 Thread 0x00007fc850117800 nmethod 3851 0x00007fc841830110 code [0x00007fc8418302c0, 0x00007fc841830af8]
+Event: 20.222 Thread 0x00007fc850117800 3853       3       com.sun.org.apache.xerces.internal.utils.SecuritySupport::getSystemProperty (15 bytes)
+Event: 20.222 Thread 0x00007fc850117800 nmethod 3853 0x00007fc84182f750 code [0x00007fc84182f8e0, 0x00007fc84182fc48]
+Event: 20.222 Thread 0x00007fc850117800 3855       3       com.sun.org.apache.xerces.internal.impl.XMLScanner::setFeature (32 bytes)
+Event: 20.222 Thread 0x00007fc850117800 nmethod 3855 0x00007fc84182f190 code [0x00007fc84182f320, 0x00007fc84182f698]
+Event: 20.222 Thread 0x00007fc850117800 3854       3       com.sun.org.apache.xerces.internal.utils.SecuritySupport$4::run (8 bytes)
+Event: 20.223 Thread 0x00007fc850117800 nmethod 3854 0x00007fc84182e1d0 code [0x00007fc84182e3e0, 0x00007fc84182ec18]
+Event: 20.224 Thread 0x00007fc850117800 3856   !   3       com.sun.org.apache.xerces.internal.utils.SecuritySupport::readJAXPProperty (171 bytes)
+Event: 20.225 Thread 0x00007fc850117800 nmethod 3856 0x00007fc841831d10 code [0x00007fc8418320e0, 0x00007fc841834268]
+Event: 20.225 Thread 0x00007fc850117800 3857       3       java.nio.charset.CharsetDecoder::implReplaceWith (1 bytes)
+Event: 20.225 Thread 0x00007fc850117800 nmethod 3857 0x00007fc84182ded0 code [0x00007fc84182e020, 0x00007fc84182e170]
+Event: 20.228 Thread 0x00007fc850117800 3860 % !   3       sun.nio.cs.ISO_8859_1$Decoder::decodeArrayLoop @ 129 (263 bytes)
+Event: 20.230 Thread 0x00007fc850117800 nmethod 3860% 0x00007fc841835650 code [0x00007fc841835b00, 0x00007fc8418386d8]
+Event: 20.231 Thread 0x00007fc850116000 nmethod 3824 0x00007fc84183d590 code [0x00007fc84183d700, 0x00007fc84183da08]
+Event: 20.231 Thread 0x00007fc850116000 3859       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanName (305 bytes)
+Event: 20.234 Thread 0x00007fc850117800 3861   !   3       sun.nio.cs.ISO_8859_1$Decoder::decodeArrayLoop (263 bytes)
+Event: 20.236 Thread 0x00007fc850117800 nmethod 3861 0x00007fc84183de10 code [0x00007fc84183e2c0, 0x00007fc841840d18]
+Event: 20.236 Thread 0x00007fc850117800 3865       3       com.sun.org.apache.xerces.internal.impl.XMLScanner::isValidNameStartChar (5 bytes)
+Event: 20.236 Thread 0x00007fc850117800 nmethod 3865 0x00007fc84183d090 code [0x00007fc84183d200, 0x00007fc84183d470]
+Event: 20.236 Thread 0x00007fc850117800 3864       3       java.io.InputStreamReader::read (11 bytes)
+Event: 20.236 Thread 0x00007fc850117800 nmethod 3864 0x00007fc84183cc90 code [0x00007fc84183ce00, 0x00007fc84183cfa8]
+Event: 20.242 Thread 0x00007fc850117800 3867       3       org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.PomDomParser::getFirstChildElement (70 bytes)
+Event: 20.242 Thread 0x00007fc850117800 nmethod 3867 0x00007fc84183bf90 code [0x00007fc84183c180, 0x00007fc84183ca28]
+Event: 20.242 Thread 0x00007fc850117800 3871       3       org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.PomDomParser::getTextContent (94 bytes)
+Event: 20.243 Thread 0x00007fc850117800 nmethod 3871 0x00007fc84183ae90 code [0x00007fc84183b0a0, 0x00007fc84183bb28]
+Event: 20.243 Thread 0x00007fc850117800 3869       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getNodeValueString (417 bytes)
+Event: 20.246 Thread 0x00007fc850117800 nmethod 3869 0x00007fc841842b90 code [0x00007fc8418430e0, 0x00007fc841846248]
+Event: 20.246 
