@@ -8,7 +8,7 @@ plugins {
 mainClassName = 'springboot.Application'
 
 group 'com.jojoldubook.practice'
-version '1.0-SNAPSHOT-' + new Date().format("yyyyMMddHHmmss")
+version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
